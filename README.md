@@ -157,7 +157,6 @@ npm run preview
 - Custom voice cloning
 - Batch processing
 - Cloud sync option
-- Edit files directly within the Codespace and commit and push your changes once you're done.
 
 ## What technologies are used for this project?
 
@@ -171,12 +170,16 @@ This project is built with:
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/bc437c68-6ddf-4d50-a540-fd7e2efa4c21) and click on Share -> Publish.
+Build the production bundle and deploy the `dist` folder to any static host (Vercel, Netlify, Cloudflare Pages, etc.):
 
-## Can I connect a custom domain to my Lovable project?
+```sh
+npm run build
+```
 
-Yes, you can!
+For local preview before deploy:
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+```sh
+npm run preview
+```
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Configure your host to serve `index.html` for client-side routes. Environment variables prefixed with `VITE_` can be set in the host’s dashboard if you use `.env` at build time.
